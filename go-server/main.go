@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func fromHandler(w http.ResponseWriter, r *http.Request) {
+func formHandler(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
@@ -33,7 +33,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
-	http.HandleFunc("/from", fromHandler)
+	http.HandleFunc("/form", formHandler)
 	http.HandleFunc("/hello", helloHandler)
 
 	fmt.Printf("Startin server at port 8000\n")
