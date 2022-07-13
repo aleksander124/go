@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var conferenceName string = "Go Conference"
+	conferenceName := "Go Conference"
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
 	// uint cant be negative like '-1'
@@ -17,8 +17,8 @@ func main() {
 	var userName string
 	var userTickets int
 	// ask user for their name
+	fmt.Scanln(&userName)
 
-	userName = "Tom"
 	userTickets = 2
 	fmt.Printf("User %v booked %v tickets.\n", userName, userTickets)
 
