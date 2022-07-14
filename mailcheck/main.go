@@ -19,7 +19,7 @@ func main() {
 
 	}
 	if err := scanner.Err(); err != nil {
-		log.Fatal("Error: Could not read form input: %v\n", err)
+		log.Fatalf("Error: Could not read form input: %v\n", err)
 	}
 }
 
